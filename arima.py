@@ -38,12 +38,12 @@ def main(country, gender, init_year):
 
         # ARIMA
         arima = auto_arima(train_i, start_p=1, start_q=1,
-                            max_p=10, max_q=10, m=12,
-                            start_P=0, seasonal=False,
-                            d=1, D=1, trace=True,
+                            max_p=10, max_q=10,
+                            seasonal=False,
+                            trace=True,
                             error_action='ignore',  
-                            suppress_warnings=True, 
-                            stepwise=True)
+                            suppress_warnings=True 
+                            )
         
         # train
         arima.fit(train_i)
